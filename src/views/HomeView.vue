@@ -13,6 +13,10 @@ export default {
 
     let message = ref("Hello world");
 
+    setTimeout(()=>{
+      message.value = "I have been changed!"; //Value of a string is accessed through .value in vue
+    }, 3000);
+
     return {
       message,
     };
