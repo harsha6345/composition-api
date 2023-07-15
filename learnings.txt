@@ -1,1 +1,3 @@
 With <script setup> we dont need to import and then also declare the vue components, we can just only import and vue automatically declare it.
+
+With these changes we can use the message directy without using the message.value
