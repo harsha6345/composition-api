@@ -1,0 +1,1 @@
+With <script setup> we dont need to import and then also declare the vue components, we can just only import and vue automatically declare it.
