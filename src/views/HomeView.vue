@@ -8,7 +8,7 @@ export default {
   setup() {
 
     onMounted(()=> {
-      alert("Hi there!")
+      alert("Hi there!");
     })
 
     return {
