@@ -1,14 +1,30 @@
 <script setup>
 import TheWelcome from '../components/TheWelcome.vue'
-import { useFlash } from "@/composables/useFlash"
+import {ref , watch} from "vue";
 
-const { flash } = useFlash();
+
+let food = ref(localStorage.getItem('food'));
+let age = ref(localStorage.getItem('age'));
+
+watch(food , (val) => {
+  write('food', val);
+});
+
+watch(age , (val)=> {
+  write('age', val);
+})
+
+function write (key , val) {
+  localStorage.setItem(key , val);
+}
+
 </script>
 
 <template>
   <main>
     <TheWelcome />
-    <p>{{ message }}</p>
-    <button @click="flash('it works')">Flash</button>
+    <p>What is your favourite food? <input type="text" v-model="food"></p>
+    <p>How old are you? <input type="text" v-model="age"></p>
+
   </main>
 </template>
